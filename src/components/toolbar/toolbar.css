@@ -1,4 +1,11 @@
 .navbar {
     background-color: wheat;
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
+  .content-box {
+    margin-left: auto; /* 요소를 오른쪽으로 이동 */
+    margin-right: 2rem;
+  }
