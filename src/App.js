@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";  
+import Toolbar from './components/toolbar/toolbar';
+
 
 function App() {
   return (
-  12
+    <Toolbar/>
   );
-}
+};
 
 export default App;
