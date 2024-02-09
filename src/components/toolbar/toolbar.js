@@ -8,9 +8,20 @@ function Toolbar() {
   return (
     <Navbar expand="lg" className="navbar">
       <Container fluid>
-        <Navbar.Brand href="/">JatMap</Navbar.Brand>
+
+      <a href='/'>
+        <div className='toolbar-logo'>
+        <img className='logo-img' src={`${
+                process.env.PUBLIC_URL
+              }/img/logo.png?${new Date().getTime()}`}/>
+        </div>
+        </a>  
+        
+        <Navbar.Brand className='toolbar-title' href="/">JatMap</Navbar.Brand>
+
         <div className='content-box'>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/">Option</Nav.Link>
