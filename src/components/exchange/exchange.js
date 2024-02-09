@@ -24,7 +24,7 @@ const ExchangeRate = () => {
   return (
     <div>
       {exchangeRate ? (
-        <div>`오늘의 엔화 환율은 ${exchangeRate.tts} : 1000원 입니다.`</div>
+        <div>`오늘의 엔화 환율은 ${exchangeRate} : 1000원 입니다.`</div>
       ) : (
         <p> 로딩중... </p>
       )}

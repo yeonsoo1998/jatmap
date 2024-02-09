@@ -1,0 +1,15 @@
+.carousel {
+    width: 800px;
+    height: 480px;
+}
+
+.carousel-item img {
+    height: 480px;
+    width: 100%;
+  }
+
+  .carouselBox {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
