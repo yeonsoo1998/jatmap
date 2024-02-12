@@ -22,6 +22,15 @@ const ExchangeRate = () => {
     fetchExchangeRate();
   }, []);
 
+
+  const findJapaneseYenExchangeRate = () => {
+    if (!exchangeRate) return null;
+    return exchangeRate.find(currency => currency.cur_unit === "JPY(100)");
+  };
+
+  // 일본 옌의 환율 정보를 가져옴
+  const japaneseYenExchangeRate = findJapaneseYenExchangeRate();
+
   return (
     <div>
       {loading ? (
@@ -32,7 +41,7 @@ const ExchangeRate = () => {
         <div>
           <h2>오늘의 일본 옌 환율</h2>
           {exchangeRate ? (
-            <p>{`1 USD = ${exchangeRate[0].ttb} JPY`}</p>
+            <p>{`100JPY = ${japaneseYenExchangeRate.ttb} KRW`}</p>
           ) : (
             <p>일본 옌 환율 정보를 찾을 수 없음</p>
           )}
