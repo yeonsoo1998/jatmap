@@ -1,20 +1,21 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const ExchangeRate = () => {
-  const [exchangeRate, setExchangeRate] = useState();
+  const [exchangeRate, setExchangeRate] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     async function fetchExchangeRate() {
       try {
-        //api호출
-        const response = await axios.get(
-          "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=QOfxsGtKjCbJiREwrmmjUyxN3xuIpLTw&searchdate=20240208&data=AP01"
-        );
-
-        setExchangeRate(response.json());
+        const response = await axios.get("http://localhost:8080/exchangeRate");
+        setExchangeRate(response.data);
+        setLoading(false);
       } catch (err) {
         console.error("Error fetching exchange rate:", err);
+        setError("일본 옌 환율 정보를 가져오는 도중 오류가 발생했습니다.");
+        setLoading(false);
       }
     }
 
@@ -23,10 +24,19 @@ const ExchangeRate = () => {
 
   return (
     <div>
-      {exchangeRate ? (
-        <div>`오늘의 엔화 환율은 ${exchangeRate} : 1000원 입니다.`</div>
+      {loading ? (
+        <p>로딩중...</p>
+      ) : error ? (
+        <p>{error}</p>
       ) : (
-        <p> 로딩중... </p>
+        <div>
+          <h2>오늘의 일본 옌 환율</h2>
+          {exchangeRate ? (
+            <p>{`1 USD = ${exchangeRate[0].ttb} JPY`}</p>
+          ) : (
+            <p>일본 옌 환율 정보를 찾을 수 없음</p>
+          )}
+        </div>
       )}
     </div>
   );

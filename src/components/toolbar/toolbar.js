@@ -13,11 +13,12 @@ function Toolbar() {
         <div className='toolbar-logo'>
         <img className='logo-img' src={`${
                 process.env.PUBLIC_URL
-              }/img/logo.png?${new Date().getTime()}`}/>
+              }/img/logo.png?${new Date().getTime()}`}/> {/*new Date , getTime 을 사용해 밀리초단위로 이미지 갱신*/}
+          {/* //https://www.flaticon.com/kr/free-icons/" 꽃 아이콘  제작자: Freepik - Flaticon*/}
         </div>
         </a>  
+
         
-        <Navbar.Brand className='toolbar-title' href="/">JatMap</Navbar.Brand>
 
         <div className='content-box'>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
