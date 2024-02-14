@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import './exchange.css'
 
 const ExchangeRate = () => {
   const [exchangeRate, setExchangeRate] = useState(null);
@@ -38,10 +39,10 @@ const ExchangeRate = () => {
       ) : error ? (
         <p>{error}</p>
       ) : (
-        <div>
-          <h2>오늘의 일본 옌 환율</h2>
+        <div  className="exchange-box">
+          <p>오늘의 일본 옌 환율</p><br></br>
           {exchangeRate ? (
-            <p>{`100JPY = ${japaneseYenExchangeRate.ttb} KRW`}</p>
+            <p>{`100옌 = ${japaneseYenExchangeRate.ttb} 원`}</p>
           ) : (
             <p>일본 옌 환율 정보를 찾을 수 없음</p>
           )}
