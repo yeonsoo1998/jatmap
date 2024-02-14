@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import Spa from "./pages/spa/spa";
+import Spa1 from "./pages/spa/spa1";
+import Spa2 from "./pages/spa/spa2";
+import Spa3 from "./pages/spa/spa3";
 import reportWebVitals from "./reportWebVitals";
 import Activity from "./pages/activity/activity";
 
@@ -13,9 +15,9 @@ root.render(
     <Routes>
       <Route path="/" element={<App />} />
 
-      <Route path="/spa" element={<Spa />} />
-      <Route path="/spa/1" element={<Spa category="spa1" />} />
-      <Route path="/spa/2" element={<Spa category="spa2" />} />
+      <Route path="/spa1" element={<Spa1 />} />
+      <Route path="/spa2" element={<Spa2 />} />
+      <Route path="/spa3" element={<Spa3 />} />
 
       <Route path="/activity" element={<Activity />} />
       <Route path="/activity/1" element={<Activity category="activity1" />} />
