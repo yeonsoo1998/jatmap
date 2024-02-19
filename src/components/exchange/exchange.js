@@ -42,7 +42,7 @@ const ExchangeRate = () => {
         <div  className="exchange-box">
           <p style={{fontWeight:'bold'}}>오늘의 일본 옌 환율</p><br></br>
           {exchangeRate ? (
-            <p>{`100옌 = ${japaneseYenExchangeRate.ttb} 원`}</p>
+            <p>{`100옌 = ${japaneseYenExchangeRate.tts} 원`}</p>
           ) : (
             <p>일본 옌 환율 정보를 찾을 수 없음</p>
           )}
