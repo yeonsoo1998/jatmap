@@ -1,0 +1,17 @@
+.selectingLocal {
+    display: flex;
+    margin-top: 5rem;
+    justify-content: center;
+}
+.localList{
+    display: flex;
+    justify-content: center;
+}
+
+.link {
+    margin-left: 1rem;
+    border: 1px solid black;
+    color:black;
+    background-color: gray;
+    text-decoration: none;
+}
